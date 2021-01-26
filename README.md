@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/PatrickJahn/3Sem_EksamensOpgave.svg?branch=master)](https://travis-ci.org/PatrickJahn/3Sem_EksamensOpgave)
+[![Build Status](https://travis-ci.org/1337k1ng/Eksamensprojekt-nyt-.svg?branch=master)](https://travis-ci.org/1337k1ng/Eksamensprojekt-nyt-)
 
 ## OBS Link til frontend del:  https://github.com/PatrickJahn/3Sem_EksamensOpgave_frontend
 
