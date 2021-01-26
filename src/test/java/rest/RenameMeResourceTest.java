@@ -5,7 +5,6 @@ import entities.User;
 import utils.EMF_Creator;
 import io.restassured.RestAssured;
 import static io.restassured.RestAssured.given;
-import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
 import java.net.URI;
 import javax.persistence.EntityManager;
@@ -19,7 +18,6 @@ import static org.hamcrest.Matchers.equalTo;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 //Uncomment the line below, to temporarily disable this test
 //@Disabled
@@ -71,7 +69,6 @@ public class RenameMeResourceTest {
           
               em.getTransaction().begin();
             //Delete existing users and roles to get a "fresh" database
-             em.createQuery("delete from Dog").executeUpdate();
             em.createQuery("delete from User").executeUpdate();
             em.createQuery("delete from Role").executeUpdate();
 
@@ -128,38 +125,7 @@ public class RenameMeResourceTest {
                 .assertThat()
                 .statusCode(HttpStatus.OK_200.getStatusCode())
                 .body("msg", equalTo("Hello anonymous"));
-    }
+    }   
+   
 
-
-    
-     @Test
-    public void testGetAllBreeds() throws Exception {
-        given()
-                .contentType("application/json")
-                .get("/dog/breeds").then()
-                .assertThat()
-                .statusCode(HttpStatus.OK_200.getStatusCode())
-                .body("breed[0]", equalTo("beagle"));
-    }
-    
-    @Test
-    @Disabled
-    public void testGetBreedDetail() throws Exception {
-        given()
-                .contentType("application/json")
-                .get("/dog/breeds/boxer").then()
-                .assertThat()
-                .statusCode(HttpStatus.OK_200.getStatusCode())
-                .body("breed", equalTo("boxer"));
-    }
-    
-      @Test
-    public void testGetBreedDetailWrongBreed() throws Exception {
-        given()
-                .contentType("application/json")
-                .get("/dog/breeds/notABreed").then()
-                .assertThat()
-                .statusCode(HttpStatus.BAD_REQUEST_400.getStatusCode())
-                .body("message", equalTo("Wrong breed or server is down"));
-    }
 }
