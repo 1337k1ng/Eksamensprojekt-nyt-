@@ -25,4 +25,12 @@ public class ClassesDTO {
 
     }
 
+    public List<ClasssDTO> getAllClasses() {
+        return allClasses;
+    }
+
+    public void setAllClasses(List<ClasssDTO> allClasses) {
+        this.allClasses = allClasses;
+    }
+
 }
