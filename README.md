@@ -1,8 +1,5 @@
 [![Build Status](https://travis-ci.org/1337k1ng/Eksamensprojekt-nyt-.svg?branch=master)](https://travis-ci.org/1337k1ng/Eksamensprojekt-nyt-)
 
-## OBS Link til frontend del:  https://github.com/PatrickJahn/3Sem_EksamensOpgave_frontend
-
-## Eksamens Opgave - How to use
 ### Preconditions
 *In order to use this code, you should have a local developer setup + a "matching" droplet on Digital Ocean as described in the 3. semester guidelines.* 
 
